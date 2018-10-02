@@ -1,116 +1,138 @@
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-html { /*Чтоб не парится с rem, но пользователь мог пользоваться без проблем, стандарт 16, надо 10*/
-	font-size: 62.5%; /*1rem = 10px; 10/16=62.5*/
+html {
+  /*Чтоб не парится с rem, но пользователь мог пользоваться без проблем, стандарт 16, надо 10*/
+  font-size: 62.5%; /*1rem = 10px; 10/16=62.5*/
 }
 
 body {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @font-face {
   font-family: "Digital";
   src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
-  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+      format("svg");
 }
 
 .App {
-	height: 100vh;
-	width: 100vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #c2c2d6;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c2c2d6;
+  flex-direction: column;
 
-	color: #fff;
+  color: #fff;
+}
+
+.creator {
+  color: #eee;
+  text-transform: uppercase;
+  margin: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 black
+}
+
+.tittle {
+  font-family: "Digital", arial;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 0 black
 }
 
 .calculator {
-	background-color: #ccc;
-	width: 40rem;
-	height: 50rem;
-	background-color: #000;
-	border: 0.5rem solid #47476b;
-	display: grid;
-	grid-template-rows: 10rem 1fr;
-
+  background-color: #ccc;
+  width: 40rem;
+  height: 50rem;
+  background-color: #000;
+  border: 0.5rem solid #47476b;
+  display: grid;
+  grid-template-rows: 10rem 1fr;
 }
 
-
-
 .panel {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	grid-gap: 1px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1px;
 }
 
 .btn {
-	background-color: #4d4d4d;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 3rem;
+  background-color: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
 }
 
 .string {
-	display:flex;
-	
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .string p {
-	height: 5rem
+  height: 5rem;
 }
 
-
 .display {
-	font-family: 'Digital', arial;
-	font-size: 3rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	
-	align-items: flex-end;
-	padding: 1rem;
+  font-family: "Digital", arial;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: flex-end;
+  padding: 1rem;
 }
 
 .btn:hover {
-	border: 1px solid #fff;
+  border: 1px solid #fff;
 }
 
 .btn:active {
-	background-color: #454343;
+  background-color: #454343;
 }
 
 .clear {
-	grid-column: span 2;
-	background-color: #ac3939;
+  grid-column: span 2;
+  background-color: #ac3939;
 }
 
 .clear:active {
-	background-color: #923030;
+  background-color: #923030;
 }
 
 .equals {
-	grid-row: 4 /span 2;
-	grid-column-start: 4;
-	background-color: #004466;
+  grid-row: 4 / span 2;
+  grid-column-start: 4;
+  background-color: #004466;
 }
 
-
 .zero {
-	grid-column: span 2;
+  grid-column: span 2;
 }
 
 .equals:active {
-	background-color: #00334d;
+  background-color: #00334d;
 }
-

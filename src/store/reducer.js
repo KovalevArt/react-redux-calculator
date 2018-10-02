@@ -15,8 +15,6 @@ const reducer = (state = initialState, action) => {
   let res = 0;
   let dispStr = "";
   let dispChar = "";
-  //console.log(action.num)
-  console.log(action);
 
   switch (action.type) {
     case actionType.ADD_NUMB:
